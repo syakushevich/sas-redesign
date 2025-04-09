@@ -18,7 +18,6 @@ export function MainNavItem({ item }: MainNavItemProps) {
       <Link href={item.href} legacyBehavior passHref>
         <NavigationMenuLink
           className={navigationMenuTriggerStyle()}
-          disabled={item.disabled}
         >
           {item.title}
         </NavigationMenuLink>
