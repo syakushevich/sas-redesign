@@ -3,7 +3,6 @@ import * as React from "react";
 import Link from "next/link";
 import { NavigationMenuContent } from "@/components/ui/navigation-menu";
 import { aboutSasNavGroups } from "@/config/site"; // Import the data
-import { ChevronRight } from "lucide-react"; // Import icon
 
 export function AboutSasMenuContent() {
   return (

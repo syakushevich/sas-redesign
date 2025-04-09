@@ -1,7 +1,6 @@
 // src/components/site-footer.tsx (New File)
 import * as React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   Facebook,
   Twitter,

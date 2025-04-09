@@ -1,6 +1,7 @@
 // src/app/layout.tsx
-import type { Metadata, Viewport } from "next"; // Import Viewport type
+import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
+import Script from "next/script"; // Import next/script
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -9,20 +10,14 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-// --- Define Metadata ---
 export const metadata: Metadata = {
   title: "SAS Group Demo",
   description: "Redesign concept for SAS Group website",
-  // Viewport definition is MOVED OUT of metadata
 };
 
-// --- Define Viewport (New Recommended Way) ---
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  // You can add other viewport properties here if needed
-  // themeColor: "...",
-  // colorScheme: "light dark",
 };
 
 export default function RootLayout({
@@ -32,7 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* REMOVE the explicit <head /> tag. Next.js handles it. */}
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -40,6 +34,10 @@ export default function RootLayout({
         )}
       >
         {children}
+
+        {/* Add Instagram Embed Script */}
+        {/* strategy="lazyOnload" waits until browser is idle to load */}
+        <Script src="//www.instagram.com/embed.js" strategy="lazyOnload" />
       </body>
     </html>
   );
