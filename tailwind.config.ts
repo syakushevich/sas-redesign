@@ -1,35 +1,29 @@
-// tailwind.config.ts (or tailwind.config.js if you prefer JS)
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config = {
-  darkMode: ["class"], // Required for Shadcn dark mode
+  // Use the string 'class' for standard Shadcn dark mode
+  darkMode: "class",
   content: [
-    "./pages/**/*.{ts,tsx}", // Include if using Pages Router
-    "./components/**/*.{ts,tsx}", // Include components outside src if any
-    "./app/**/*.{ts,tsx}", // Include App Router
-    "./src/**/*.{ts,tsx}", // Include everything in src
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
-  prefix: "", // Optional prefix for Tailwind classes
+  prefix: "",
   theme: {
-     container: {
-       center: true, // <-- Centers the container
-       padding: "2rem", // <-- Default horizontal padding (adjust as needed)
-       screens: {
-         // Optional: Define max-widths for breakpoints
-         sm: "640px",
-         md: "768px",
-         lg: "1024px",
-         xl: "1280px",
-         "2xl": "1920px", // <-- Max width the container will reach
-       },
-     },
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
-        // Ensure this matches the variable in layout.tsx
         sans: ["var(--font-sans)", "sans-serif"],
       },
       colors: {
-        // Shadcn color definitions (automatically added by `npx shadcn-ui init`)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -65,13 +59,11 @@ const config = {
         },
       },
       borderRadius: {
-        // Shadcn border radius definitions
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        // Shadcn animation definitions
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -82,14 +74,12 @@ const config = {
         },
       },
       animation: {
-        // Shadcn animation definitions
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")], // Required for Shadcn animations
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
-// Use `module.exports = config` if using a .js file
 export default config;
