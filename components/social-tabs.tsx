@@ -31,12 +31,25 @@ export function SocialTabs() {
   return (
     <Tabs defaultValue="instagram" className="w-full bg-muted rounded-lg">
       <TabsList className="grid w-full grid-cols-3">
+        <TabsTrigger value="x">X (Twitter)</TabsTrigger>
         <TabsTrigger value="instagram">Instagram</TabsTrigger>
         <TabsTrigger value="youtube">YouTube</TabsTrigger>
-        <TabsTrigger value="x">X (Twitter)</TabsTrigger>
       </TabsList>
 
       <TabsContents className="mx-1 mb-1 -mt-2 rounded-sm h-full bg-background">
+        {/* X (Twitter) Tab Content - Updated to use react-tweet */}
+        <TabsContent value="x">
+          {/* Use data-theme="light" or "dark" if needed for tweet styling */}
+          <div className="p-6 space-y-6" data-theme="light">
+            {tweetIds.map((id, index) => (
+              // Center each tweet component
+              <div key={index} className="flex justify-center">
+                <Tweet id={id} />
+              </div>
+            ))}
+          </div>
+        </TabsContent>
+
         {/* Instagram Tab Content */}
         <TabsContent value="instagram">
           <div className="p-6">
@@ -64,19 +77,6 @@ export function SocialTabs() {
               <div className="aspect-video bg-muted rounded animate-pulse"></div>
               <div className="aspect-video bg-muted rounded animate-pulse"></div>
             </div>
-          </div>
-        </TabsContent>
-
-        {/* X (Twitter) Tab Content - Updated to use react-tweet */}
-        <TabsContent value="x">
-          {/* Use data-theme="light" or "dark" if needed for tweet styling */}
-          <div className="p-6 space-y-6" data-theme="light">
-            {tweetIds.map((id, index) => (
-              // Center each tweet component
-              <div key={index} className="flex justify-center">
-                <Tweet id={id} />
-              </div>
-            ))}
           </div>
         </TabsContent>
       </TabsContents>
