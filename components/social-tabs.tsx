@@ -29,7 +29,7 @@ const tweetIds = [tweetId];
 
 export function SocialTabs() {
   return (
-    <Tabs defaultValue="instagram" className="w-full bg-muted rounded-lg">
+    <Tabs defaultValue="x" className="w-full bg-muted rounded-lg">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="x">X (Twitter)</TabsTrigger>
         <TabsTrigger value="instagram">Instagram</TabsTrigger>
