@@ -35,8 +35,6 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Add Instagram Embed Script */}
-        {/* strategy="lazyOnload" waits until browser is idle to load */}
         <Script src="//www.instagram.com/embed.js" strategy="lazyOnload" />
       </body>
     </html>

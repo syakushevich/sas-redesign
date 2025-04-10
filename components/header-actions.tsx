@@ -17,7 +17,7 @@ export function HeaderActions() {
   };
 
   return (
-    <div className="flex flex-1 items-center justify-end space-x-2">
+    <div className="flex items-center justify-end space-x-2">
       {/* REMOVED: Stock Ticker Span */}
       {/* <span className="text-sm text-muted-foreground hidden lg:inline">
         SAS DKK: 123.45 (+0.5%)

@@ -1,68 +1,45 @@
-// src/components/site-footer.tsx (New File)
+// src/components/site-footer.tsx
 import * as React from "react";
 import Link from "next/link";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-} from "lucide-react";
 
 export function SiteFooter() {
-  const currentYear = new Date().getFullYear();
+  // Removed currentYear as it's no longer used
+  // const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t bg-muted/50 py-8 md:py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 text-sm text-muted-foreground sm:px-6 md:flex-row md:justify-between lg:px-8">
-        {/* Left Column: Address Info */}
-        <div className="text-center md:text-left">
-          <p className="font-semibold">SAS {currentYear}</p>
-          <p>SAS AB, registration number 556606-8499,</p>
-          <p>SE-195 87</p>
-          <p>Stockholm, Sweden</p>
+      {/* Main container: Center its content horizontally */}
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
+        {/* Removed Left Column */}
+
+        {/* Links Section: Centered */}
+        {/* Removed the extra wrapper div */}
+        {/* Apply flex styles directly here */}
+        <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
+          <Link href="#" className="hover:text-foreground hover:underline">
+            Book a trip with SAS
+          </Link>
+          <span className="opacity-50">|</span> {/* Slightly muted separator */}
+          <Link href="#" className="hover:text-foreground hover:underline">
+            Contacts
+          </Link>
+          <span className="opacity-50">|</span> {/* Slightly muted separator */}
+          <Link href="#" className="hover:text-foreground hover:underline">
+            SAS Cargo
+          </Link>
+          {/* Separator for wrapping */}
+          <span className="hidden sm:inline opacity-50">|</span>
+          <Link href="#" className="hover:text-foreground hover:underline">
+            Usage of cookies
+          </Link>
+          <span className="opacity-50">|</span> {/* Slightly muted separator */}
+          <Link href="#" className="hover:text-foreground hover:underline">
+            Terms and conditions
+          </Link>
         </div>
 
-        {/* Right Column: Links */}
-        <div className="flex flex-col items-center gap-2 text-center md:items-end md:text-right">
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-end">
-            <Link href="#" className="hover:text-foreground hover:underline">
-              Book a trip with SAS
-            </Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-foreground hover:underline">
-              Contacts
-            </Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-foreground hover:underline">
-              SAS Cargo
-            </Link>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-end">
-            <Link href="#" className="hover:text-foreground hover:underline">
-              Usage of cookies
-            </Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-foreground hover:underline">
-              Terms and conditions
-            </Link>
-          </div>
-        </div>
-
-        {/* Social Media Icons */}
-        <div className="flex space-x-4 md:order-first">
-          <Link href="#" aria-label="Facebook" className="hover:text-foreground">
-            <Facebook className="h-5 w-5" />
-          </Link>
-          <Link href="#" aria-label="Twitter" className="hover:text-foreground">
-            <Twitter className="h-5 w-5" />
-          </Link>
-          <Link href="#" aria-label="LinkedIn" className="hover:text-foreground">
-            <Linkedin className="h-5 w-5" />
-          </Link>
-          <Link href="#" aria-label="Instagram" className="hover:text-foreground">
-            <Instagram className="h-5 w-5" />
-          </Link>
-        </div>
+        {/* Optional: Add copyright centered below */}
+        {/* <div>&copy; {new Date().getFullYear()} SAS Group</div> */}
       </div>
     </footer>
   );

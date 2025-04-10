@@ -3,10 +3,9 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ImageCarousel } from "@/components/image-carousel";
 import { SocialTabs } from "@/components/social-tabs";
-import { ExploreSection } from "@/components/explore-section"; // Import the new component
+import { ExploreSection } from "@/components/explore-section";
 import { Button } from "@/components/ui/button";
-// Removed Card imports and Lucide icons specific to the Explore section
-import { TrendingUp } from "lucide-react"; // Keep only icons needed elsewhere
+import { TrendingUp } from "lucide-react";
 
 export default function Home() {
   const carouselImages = [
@@ -22,7 +21,7 @@ export default function Home() {
 
       <main className="flex-grow mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* --- Hero Section --- */}
-        <section className="pt-16 md:pt-24 lg:pt-32 text-center">
+        <section className="pt-16 md:pt-24 lg:pt-16 text-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl mb-6">
               Connecting Scandinavia to the World
@@ -45,16 +44,28 @@ export default function Home() {
         </section>
 
         {/* --- Carousel Section --- */}
-        <section className="py-12 md:py-16">
+        <section className="py-9 md:py-9">
           <ImageCarousel images={carouselImages} />
         </section>
 
         {/* --- Key Information Blocks Section --- */}
-        {/* Render the new component */}
+        {/* Note: Moved ExploreSection before SocialTabs for better flow */}
         <ExploreSection />
 
         {/* --- Social Tabs Section --- */}
         <section className="pb-12 md:pb-16 lg:pb-20">
+          {/* Added Heading and Paragraph */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Follow Our Journey
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Stay updated with the latest news, insights, and moments from SAS
+              across our social media channels.
+            </p>
+          </div>
+          {/* End of Added Text */}
+
           <SocialTabs />
         </section>
       </main>
